@@ -4,3 +4,4 @@ async function loadPyodide() {
   await pyodide.loadPackage("pygame-ce");
   return pyodide;
 }
+console.log("Pygame loads, YAY!");
