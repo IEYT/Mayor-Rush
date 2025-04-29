@@ -13,30 +13,6 @@
       </div>
 
       <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
-      <script type="pyodide" id="app-python-code">
-        <!-- PYTHON_SCRIPT_PLACEHOLDER -->
-      </script>
-
-      <script type="text/javascript">
-        async function main() {
-          const pyodide = await loadPyodide();
-          pyodide.globals.set("pyodide", pyodide);
-          const sdl2Canvas = document.getElementById("canvas");
-          pyodide.globals.set("canvas", sdl2Canvas); // TODO: maybe not needed
-          pyodide.canvas.setCanvas2D(sdl2Canvas);
-
-          // Load the pygame-ce package
-          await pyodide.loadPackage("pygame-ce");
-
-          const pythonScript =
-            document.getElementById("app-python-code").textContent;
-
-          // Run the script
-          pyodide.runPythonAsync(pythonScript);
-        }
-
-        main();
-      </script>
-    </section>
+      <script src="game.js"></script>
   </body>
 </html>
