@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Mayor Rush</title>
   </head>
 
-  <body></body>
+  <body>
+    <section class="python-container-section">
+      <div id="canvas-container">
+        <canvas id="canvas" width="540" height="600"></canvas>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
+      <script type="pyodide" id="app-python-code">
+        <!-- PYTHON_SCRIPT_PLACEHOLDER -->
+      </script>
+
+      <script type="text/javascript">
+        async function main() {
+          const pyodide = await loadPyodide();
+          pyodide.globals.set("pyodide", pyodide);
+          const sdl2Canvas = document.getElementById("canvas");
+          pyodide.globals.set("canvas", sdl2Canvas); // TODO: maybe not needed
+          pyodide.canvas.setCanvas2D(sdl2Canvas);
+
+          // Load the pygame-ce package
+          await pyodide.loadPackage("pygame-ce");
+
+          const pythonScript =
+            document.getElementById("app-python-code").textContent;
+
+          // Run the script
+          pyodide.runPythonAsync(pythonScript);
+        }
+
+        main();
+      </script>
+    </section>
+  </body>
 </html>
