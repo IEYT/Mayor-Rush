@@ -2,26 +2,38 @@ async function main() {
   let pyodide = await loadPyodide();
   pyodide._api._skip_unwind_fatal_error = true; // Add the flag here
   await pyodide.loadPackage("pygame-ce");
+  let sdl2Canvas = document.createElement("canvas");
+  sdl2Canvas.id = "canvas";
+  pyodide.canvas.setCanvas2D(sdl2Canvas);
+  pyodide.runPython(`
+    import asyncio  
+    import pygame  
+
+    async def run_game():  
+        # pygame setup
+        pygame.init()
+        screen = pygame.display.set_mode((1280, 720))
+        clock = pygame.time.Clock()
+        running = True
+
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            screen.fill("purple")
+
+
+            pygame.display.flip()
+
+
+        pygame.quit()
+        await asyncio.sleep(1 / fps)
+
+
+
+    `);
   return pyodide;
 }
 main();
 console.log("Pygame loads, YAY!");
-let sdl2Canvas = document.createElement("canvas");
-sdl2Canvas.id = "canvas";
-pyodide.canvas.setCanvas2D(sdl2Canvas);
-pyodide.runPython(`
-    import asyncio
-    import pygame
-
-    pygame.init()
-
-    fps = 60
-
-    async def run_game():
-        while True:
-            WIDTH, HEIGHT = 500, 500
-            screen = pygame.display.set_mode((WIDTH, HEIGHT))
-            ORANGE = (255,165,0)
-            screen.fill(ORANGE)
-            await asyncio.sleep(1 / fps)
-    `);
