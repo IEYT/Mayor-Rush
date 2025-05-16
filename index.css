@@ -1,0 +1,10 @@
+#buttonPlay {
+  width: 100px;
+  height: 50px;
+  background: beige;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10%;
+}
