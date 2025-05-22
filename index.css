@@ -1,10 +1,79 @@
 #buttonPlay {
-  width: 100px;
-  height: 50px;
-  background: beige;
+  position: absolute;
+  width: 10.15vw;
+  height: 2.75vw;
+  top: 13.67vw;
+  left: 97.67vh;
+  transform: translate(-50%, -50%);
+  background: #dbdbac;
   background-size: cover;
   border: none;
   cursor: pointer;
   font-family: "Courier New", Courier, monospace;
-  border-radius: 10%;
+  border-radius: 12.5px;
+}
+
+#canvas {
+  width: 60vw;
+  height: 31.75vw;
+}
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+#Corruption {
+  position: absolute;
+  width: 10.15vw;
+  height: 2.75vw;
+  top: 17.58vw;
+  left: 89.15vh;
+  background: #dbc0ac;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 12.5px;
+}
+
+#Funding {
+  position: absolute;
+  width: 10.15vw;
+  height: 2.75vw;
+  top: 275px;
+  left: 575px;
+  background: #dbc0ac;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 12.5px;
+}
+#Spending {
+  position: absolute;
+  width: 10.15vw;
+  height: 2.75vw;
+  top: 325px;
+  left: 575px;
+  background: #dbc0ac;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 12.5px;
+}
+#Decorrupt {
+  position: absolute;
+  width: 10.15vw;
+  height: 2.75vw;
+  top: 375px;
+  left: 575px;
+  background: #dbc0ac;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 12.5px;
 }
