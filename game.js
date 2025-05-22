@@ -6,7 +6,7 @@ const fund = document.getElementById("Funding");
 const spend = document.getElementById("Spending");
 const decorrupt = document.getElementById("Decorrupt");
 
-let corruption = 75;
+let corruption = 0;
 let funding = 0;
 let spending = 0;
 let decorrupting = 0;
