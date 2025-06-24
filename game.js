@@ -29,7 +29,7 @@ playbutton.addEventListener("mousedown", function (event) {
     70
   );
   function checkcorrupt() {
-    if (corruption > 74) {
+    if (corruption > 10) {
       document.getElementById("scene").innerText =
         "You... Are Very Corrupt, and shall be expelled.";
       imgGameover = document.createElement("img");
@@ -39,7 +39,7 @@ playbutton.addEventListener("mousedown", function (event) {
   }
 
   function checkfund() {
-    if (funding > 74) {
+    if (funding > 10) {
       document.getElementById("scene").innerText =
         "You helped 1000s of people, and created an awesome time for a lot of people. But you did too much. You made the town debt-town.";
       imgGameover = document.createElement("img");
@@ -49,17 +49,17 @@ playbutton.addEventListener("mousedown", function (event) {
   }
 
   function checkspend() {
-    if (spending > 74) {
+    if (spending > 10) {
       document.getElementById("scene").innerText =
         "You spent way too much. You seem like a corrupt person although you didn't corrupt.";
       imgGameover = document.createElement("img");
-      imgGameover.src = "Overdone.svg";
+      imgGameover.src = "gameover.svg";
       document.body.appendChild(imgGameover);
     }
   }
 
   function checkdecorrupt() {
-    if (decorrupting > 3) {
+    if (decorrupting > 10) {
       document.getElementById("scene").innerText =
         "You sucessfully destroyed all of those fraudsters and corrupt guys. You have made the town a better place.";
       overdone = document.createElement("img");
@@ -69,7 +69,7 @@ playbutton.addEventListener("mousedown", function (event) {
   }
 
   function checkfundSpending() {
-    if (spending && funding == 50) {
+    if (spending == 6 && funding == 6) {
       document.getElementById("scene").innerText =
         "You, the majesty, has done a pretty stable job. With a mix of spending and funding, you made good progress.";
       stable = document.createElement("img");
@@ -79,7 +79,7 @@ playbutton.addEventListener("mousedown", function (event) {
   }
 
   function checkcorruptDecorrupt() {
-    if (corruption && decorrupting == 50) {
+    if (corruption == 6 && decorrupting == 6) {
       document.getElementById("scene").innerText =
         "You did some shady stuff, but at least to manage it in time.";
       stable = document.createElement("img");
@@ -89,7 +89,7 @@ playbutton.addEventListener("mousedown", function (event) {
   }
 
   function checkeverything() {
-    if (corruption && decorrupting && funding && spending == 25) {
+    if (corruption == 5 && decorrupting == 5 && funding == 5 && spending == 5) {
       document.getElementById("scene").innerText =
         "Now you're just doing an even mix for fun.";
       stable = document.createElement("img");
